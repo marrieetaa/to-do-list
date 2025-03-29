@@ -43,3 +43,10 @@ function saveTaskToLocalStorage(taskText) {
     localStorage.setItem('tasks',JSON.stringify(tasks));
 }
 
+//Dunction to remove task from LocalStorage
+function removeTaskFromLocalStorage(taskText) {
+    let tasks = JSON.parse(localStorage.getItem(tasks)) || [];
+    tasks = tasks.filter(task => task.text !== taskText);
+    localStorage.setItem('tasks',JSON.stringify(tasks));
+}
+
