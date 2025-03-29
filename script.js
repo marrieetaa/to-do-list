@@ -18,6 +18,10 @@ document.addEventListener('DOMContentLoaded',function() {
             taskList.removeChild(li);
         });
 
+        li.addEventListener('click',function() {
+            li.classList.toggle('done');
+        });
+
         taskList.appendChild(li);
         li.appendChild(deleteBtn);
     })
