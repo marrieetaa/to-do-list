@@ -34,19 +34,29 @@ document.addEventListener('DOMContentLoaded',function() {
             addAndRemoveItems();
         }
     });
-});
-
-//Function to save task to LOcalStorage
+    //Function to save task to LOcalStorage
 function saveTaskToLocalStorage(taskText) {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.push({text: taskText, completed: false});
     localStorage.setItem('tasks',JSON.stringify(tasks));
 }
 
-//Dunction to remove task from LocalStorage
+//Function to remove task from LocalStorage
 function removeTaskFromLocalStorage(taskText) {
     let tasks = JSON.parse(localStorage.getItem(tasks)) || [];
     tasks = tasks.filter(task => task.text !== taskText);
     localStorage.setItem('tasks',JSON.stringify(tasks));
 }
+
+//Function to update task status in LocalStorage
+function updateTaskInLocalStorage(taskText,completed) {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const task = tasks.find(task => task.text === taskText);
+    if(task){
+        task.completed = completed;
+        localStorage.setItem('tasks',JSON.stringify(tasks));
+    }
+}
+});
+
 
