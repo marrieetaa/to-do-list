@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded',function() {
         const li = document.createElement('li');
         li.textContent = taskText;
 
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
 
         taskList.appendChild(li);
+        li.appendChild(deleteBtn);
     })
 })
