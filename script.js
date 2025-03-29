@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded',function() {
 
         taskList.appendChild(li);
         li.appendChild(deleteBtn);
+        saveTaskToLocalStorage(taskText);
         taskInput.value = "";
     }
    
@@ -34,3 +35,11 @@ document.addEventListener('DOMContentLoaded',function() {
         }
     });
 });
+
+//Function to save task to LOcalStorage
+function saveTaskToLocalStorage(taskText) {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.push({text: taskText, completed: false});
+    localStorage.setItem('tasks',JSON.stringify(tasks));
+}
+
