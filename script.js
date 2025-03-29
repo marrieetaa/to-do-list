@@ -5,9 +5,12 @@ document.addEventListener('DOMContentLoaded',function() {
 
     addTaskBtn.addEventListener('click',function() {
         let taskText = taskInput.value.trim();
-        console.log(taskText);
         let toUpperCaseFirstLetter = taskText.charAt(0).toUpperCase() + taskText.slice(1).toLowerCase();
         taskText = toUpperCaseFirstLetter;
         if (taskText === "") return;
+
+        const li = document.createElement('li');
+        li.textContent = taskText;
+        taskList.appendChild(li);
     })
 })
