@@ -24,5 +24,6 @@ document.addEventListener('DOMContentLoaded',function() {
 
         taskList.appendChild(li);
         li.appendChild(deleteBtn);
+        taskInput.value = "";
     })
 })
