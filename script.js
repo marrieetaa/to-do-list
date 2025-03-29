@@ -4,9 +4,10 @@ document.addEventListener('DOMContentLoaded',function() {
     const taskList = document.getElementById('taks-list');
 
     addTaskBtn.addEventListener('click',function() {
-        const tasktext = taskInput.value.trim();
-        const toUpperCaseFirstLetter = tasktext.charAt(0).toUpperCase() + tasktext.slice(1).toLowerCase();
-        tasktext = toUpperCaseFirstLetter;
+        let taskText = taskInput.value.trim();
+        console.log(taskText);
+        let toUpperCaseFirstLetter = taskText.charAt(0).toUpperCase() + taskText.slice(1).toLowerCase();
+        taskText = toUpperCaseFirstLetter;
         if (taskText === "") return;
     })
 })
