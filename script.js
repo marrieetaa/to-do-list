@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded',function() {
 
     function addAndRemoveItems(){
         let taskText = taskInput.value.trim();
-        let toUpperCaseFirstLetter = taskText.charAt(0).toUpperCase() + taskText.slice(1).toLowerCase();
+        let toUpperCaseFirstLetter = taskText.charAt(0).toUpperCase() + taskText.slice(1);
         taskText = toUpperCaseFirstLetter;
         if (taskText === "") return;
 
