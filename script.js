@@ -26,4 +26,11 @@ document.addEventListener('DOMContentLoaded',function() {
         li.appendChild(deleteBtn);
         taskInput.value = "";
     }
-})
+   
+    addTaskBtn.addEventListener('click', addAndRemoveItems);
+    taskInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            addAndRemoveItems();
+        }
+    });
+});
