@@ -13,9 +13,11 @@ document.addEventListener('DOMContentLoaded',function() {
 
         const li = document.createElement('li');
         li.textContent = taskText;
+        if(li) li.classList.add('task-li');
 
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
+        if(deleteBtn) deleteBtn.classList.add('delete-btn')
         deleteBtn.addEventListener('click',function() {
             taskList.removeChild(li);
         });
@@ -44,9 +46,11 @@ document.addEventListener('DOMContentLoaded',function() {
             const li = document.createElement('li');
             li.textContent = task.text;
             if(task.completed) li.classList.add('done');
+            if(task) li.classList.add('task-li');
 
             const deleteBtn = document.createElement('button');
             deleteBtn.textContent = ' Delete';
+            if(deleteBtn) deleteBtn.classList.add('delete-btn');
             deleteBtn.addEventListener('click',function() {
                 taskList.removeChild(li);
                 removeTaskFromLocalStorage(task.text);

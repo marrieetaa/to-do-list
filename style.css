@@ -1,3 +1,37 @@
+h1{
+    color: #BE5985;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#task-input {
+    color: #EC7FA9;
+    font-size: 1rem;
+    border-color: aliceblue;
+    border-radius: 10px;
+    background-color: rgb(241, 220, 239);
+}
+
+#add-task-btn {
+    color: #e386aa;
+    border: 2px solid pink;
+    border-radius:8px;
+    font-size: 1rem;
+}
+
+.task-li {
+    color: #ADB2D4;
+    font-size: 20px;
+}
+
+.delete-btn {
+    color: rgb(221, 174, 174);
+    border:none;
+    border-radius: 5px;
+    margin-left: 10px;
+
+}
+
 .done {
     text-decoration: line-through;
     color:aliceblue;
