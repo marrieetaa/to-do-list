@@ -26,8 +26,13 @@ document.addEventListener('DOMContentLoaded',function() {
             li.classList.toggle('done');
         });
 
+        const now = new Date();
+        const taskTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}
+                          ${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
+
         taskList.appendChild(li);
         li.appendChild(deleteBtn);
+        li.append(taskTime);
         saveTaskToLocalStorage(taskText);
         taskInput.value = "";
     }
@@ -59,8 +64,14 @@ document.addEventListener('DOMContentLoaded',function() {
                 li.classList.toggle('done');
                 updateTaskInLocalStorage(task.text, li.classList.contains('done'));
             });
+            const now = new Date();
+            const taskTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}
+                              ${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
+    
+
             li.appendChild(deleteBtn);
             taskList.appendChild(li);
+            li.append(taskTime);
         });
     }
 
@@ -88,5 +99,3 @@ document.addEventListener('DOMContentLoaded',function() {
         }
     }
 });
-
-
